@@ -6,8 +6,8 @@
 ## http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
 ##
 ## Ultimately, this script will calculate the means of a number of variables
-## (means and standard deviations of measurments) for every subject and
-## activity.
+## (means and standard deviations amongst the different features) for every
+## subject and activity.
 ##
 ## This script requires the UCI HAR Dataset to be unzipped and in the same
 ## folder as the script. The dataset can be obtained from here:
