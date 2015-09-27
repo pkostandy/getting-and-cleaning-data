@@ -14,7 +14,7 @@ folder as the script. The dataset can be obtained from [here](https://d396qusza4
 
 To reproduce the tidy dataset in `means.txt`, you only need to run `run_analysis.R`. Below is an outline of how it processes the data.
 
-1. First, it loads the `dplyr` pacakage which is needed towards the end of the analysis. It is assumed that this package is already installed on the user's system. If not, it can be installed using the `install.package("dplyr")` command.
+1. First, it loads the `dplyr` package which is needed towards the end of the analysis. It is assumed that this package is already installed on the user's system. If not, it can be installed using the `install.package("dplyr")` command.
 2. The training and test data are then separately imported into `trainingData` and `testData`. `trainingDataLabels` reads in the activity designation for each observation while `trainingSubject` reads in the subject number for which it was made. The correlates for the test variables are `testDataLabels` and `testSubject`.
 3. Variable names are subsequently obtained from the `features.txt` file and assigned to the appropriate columns.
 4. Columns representing subject number and activity id are added to each data set.
