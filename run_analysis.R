@@ -17,24 +17,24 @@
 library(dplyr)
 
 ## get training dataset
-trainingData <- read.table("UCI HAR Dataset/train/X_train.txt",
-	header = FALSE)
-trainingDataLabels <- read.table("UCI HAR Dataset/train/y_train.txt",
-	header = FALSE)
-trainingSubject <- read.table("UCI HAR Dataset/train/subject_train.txt",
-	header = FALSE)
+trainingData <- read.table(
+	file = file.path("UCI HAR Dataset", "train", "X_train.txt"))
+trainingDataLabels <- read.table(
+	file = file.path("UCI HAR Dataset", "train", "y_train.txt"))
+trainingSubject <- read.table(
+	file = file.path("UCI HAR Dataset", "train", "subject_train.txt"))
 
 ## get test dataset
-testData <- read.table("UCI HAR Dataset/test/X_test.txt",
-	header = FALSE)
-testDataLabels <- read.table("UCI HAR Dataset/test/y_test.txt",
-	header = FALSE)
-testSubject <- read.table("UCI HAR Dataset/test/subject_test.txt",
-	header = FALSE)
+testData <- read.table(
+	file = file.path("UCI HAR Dataset", "test", "X_test.txt"))
+testDataLabels <- read.table(
+	file = file.path("UCI HAR Dataset", "test", "y_test.txt"))
+testSubject <- read.table(
+	file = file.path("UCI HAR Dataset", "test", "subject_test.txt"))
 
 ## get variable names for test and training data and assign column names
-features <- read.table("UCI HAR Dataset/features.txt",
-	header = FALSE,
+features <- read.table(
+	file = file.path("UCI HAR Dataset", "features.txt"),
 	row.names = 1,
 	stringsAsFactors = FALSE)
 colnames(trainingData) <- features[, 1]
@@ -55,8 +55,8 @@ relevantCols <- c(1, 2, relevantVars)
 relData <- mergedData[relevantCols]
 
 ## get activity descriptions
-activities <- read.table("UCI HAR Dataset/activity_labels.txt",
-	header = FALSE,
+activities <- read.table(
+	file = file.path("UCI HAR Dataset", "activity_labels.txt"),
 	row.names = 1,
 	stringsAsFactors = FALSE)
 relData[, 2] <- as.factor(relData[, 2])
